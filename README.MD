@@ -39,10 +39,10 @@ O objetivo do Ecoa é disponibilizar uma APP que oferece exercícios fonoaudiol�
   <img src="./Preview/Loading.jpeg" width="250"/>
   <img src="./Preview/Login.jpeg" width="250"/>
   <img src="./Preview/Main.jpeg" width="250"/>
-  <img src="./Preview/Menu1.jpg" width="250"/>
-  <img src="./Preview/ClickCard.jpg" width="250"/>
-  <img src="./Preview/Exercises.jpg" width="250"/>
-  <img src="./Preview/Menu2.jpg" width="250"/>
+  <img src="./Preview/Menu1.jpeg" width="250"/>
+  <img src="./Preview/ClickCard.jpeg" width="250"/>
+  <img src="./Preview/Exercises.jpeg" width="250"/>
+  <img src="./Preview/Menu2.jpeg" width="250"/>
 
 </div>
 
