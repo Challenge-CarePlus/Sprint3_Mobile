@@ -10,6 +10,7 @@ import LoginScreen from "./screens/Login";
 import Loading from "./screens/Loading";
 import Main from "./screens/Main";
 import Missing from './screens/Missing';
+import Exercise from './screens/Exercise';
 
 export default function App() {
   const [isLogged, setIsLogged] = useState(false);
@@ -41,12 +42,21 @@ export default function App() {
         <LinearGradient colors={['#FFFFFF', '#EEF7FF']} start={{ x: 0.5, y: 1 }} end={{ x: 0.5, y: 0 }} style={styles.container}>
           <Menu changeLogin={setIsLogged} changeScreen={setTelaAtual} />
           <View style={styles.withMenuContainer}>
-            <Main />
+            <Main changeScreen={setTelaAtual} />
           </View>
         </LinearGradient>
       )}
 
-      {telaAtual !== Tela.LOADING && telaAtual !== Tela.LOGIN && !(telaAtual === Tela.MAIN && isLogged) && (
+      {telaAtual === Tela.EXERCISE && isLogged && (
+        <LinearGradient colors={['#FFFFFF', '#EEF7FF']} start={{ x: 0.5, y: 1 }} end={{ x: 0.5, y: 0 }} style={styles.container}>
+          <Menu changeLogin={setIsLogged} changeScreen={setTelaAtual} />
+          <View style={styles.withMenuContainer}>
+            <Exercise />
+          </View>
+        </LinearGradient>
+      )}
+
+      {telaAtual !== Tela.LOADING && telaAtual !== Tela.LOGIN && !(telaAtual === Tela.MAIN && isLogged) && !(telaAtual === Tela.EXERCISE && isLogged) && (
         <LinearGradient colors={['#FFFFFF', '#EEF7FF']} start={{ x: 0.5, y: 1 }} end={{ x: 0.5, y: 0 }} style={styles.container}>
           <Missing changeLogin={setIsLogged} changeScreen={setTelaAtual}/>
         </LinearGradient>

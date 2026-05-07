@@ -1,8 +1,9 @@
 import React from "react";
 import { StatusBar, StyleSheet, Text, View } from "react-native";
 import Card from "../components/Card";
+import { ChangeScreen, Tela } from "../types";
 
-export default function Main(){
+export default function Main({ changeScreen }: ChangeScreen){
     return(
         <View style={styles.containerMain}>
             <StatusBar hidden={true} />
@@ -10,10 +11,10 @@ export default function Main(){
                 Cuidado fonoaudiológico de alta perfomance
             </Text>
             <View style={styles.cardContainer}>
-                <Card title="Exercícios" subtitle="Prática" icon={require("./../assets/svg/Exercicios.png")} active={true}/>
-                <Card title="Paciente" subtitle="Estatística" icon={require("./../assets/svg/Paciente.png")} active={true}/>
-                <Card title="Placeholder" subtitle="placeholder" icon={require("./../assets/svg/Missing.png")} active={false}/>
-                <Card title="Serviços" subtitle="Em construção" icon={require("./../assets/svg/Servicos.png")} active={false}/>
+                <Card title="Exercícios" onPress={() => changeScreen(Tela.EXERCISE)} subtitle="Prática" icon={require("./../assets/svg/Exercicios.png")} active={true}/>
+                <Card title="Paciente" onPress={() => {}} subtitle="Estatística" icon={require("./../assets/svg/Paciente.png")} active={true}/>
+                <Card title="Placeholder" onPress={() => {}} subtitle="placeholder" icon={require("./../assets/svg/Missing.png")} active={false}/>
+                <Card title="Serviços" onPress={() => {}} subtitle="Em construção" icon={require("./../assets/svg/Servicos.png")} active={false}/>
             </View>
         </View>
     )

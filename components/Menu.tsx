@@ -19,6 +19,9 @@ export default function Menu({ changeLogin, changeScreen }: DefaultProps) {
                 </View>
             </View>
             <View style={[styles.dropDown, menuOpen ? null : styles.menuClosed]}>
+                <TouchableOpacity onPress={() => { changeLogin(true), changeScreen(Tela.MAIN)}}>
+                    <Text style={styles.menuText}>Home</Text>
+                </TouchableOpacity>
                 <TouchableOpacity onPress={() => { changeLogin(false), changeScreen(Tela.LOGIN)}}>
                     <Text style={styles.menuText}>Sair</Text>
                 </TouchableOpacity>
@@ -52,7 +55,8 @@ const styles = StyleSheet.create({
         marginTop: 70,
         width: '100%',
         backgroundColor: '#1E3E6D',
-        padding: 30
+        padding: 30,
+        gap: 10
     },
     menuClosed: {
         display: 'none'

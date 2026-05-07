@@ -1,16 +1,23 @@
 import React, { useState } from "react";
 import { View, Image, TextInput, TouchableOpacity, Text, StyleSheet, StatusBar } from "react-native";
 import { DefaultProps, Tela } from "../types";
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function LoginScreen({ changeLogin, changeScreen }: DefaultProps) {
   const [usuario, setUsuario] = useState("");
   const [senha, setSenha] = useState("");
   const [error, setError] = useState<string>("");
 
-  function handleLogin() {
+  async function handleLogin() {
     if (usuario === "dev" && senha === "123") {
-      changeLogin(true);
-      changeScreen(Tela.MAIN)
+      try {
+        await AsyncStorage.setItem('@user_logged', 'true');
+
+        changeLogin(true);
+        changeScreen(Tela.MAIN);
+      } catch (e) {
+        setError("Erro ao salvar login");
+      }
     } else {
       setError("Usuario ou senha incorretos!");
     }
